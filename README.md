@@ -8,6 +8,12 @@ The first Supabase migration creates the data model for profiles, accounts, cate
 
 Purchase decisions are retained separately from transactions so the app can later explain recommendations using actual spending patterns and the eventual outcome.
 
+## Dashboard
+
+Signed-in users can create accounts, record transactions, and review recent activity. The monthly panel includes category budget settings, recorded income/spending/net totals, category spending versus budget, and daily spending charts using Recharts. Choose a month to review its transactions or set, update, and remove its expense-category budgets.
+
+Budget progress flags categories at 80% of their limit, at the limit, or over budget. All figures use BDT and recorded transactions; transfers and account opening balances are excluded from monthly insights. Budgets do not automatically repeat in later months.
+
 ## Setup
 
 1. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
@@ -24,6 +30,8 @@ Purchase decisions are retained separately from transactions so the app can late
 ```bash
 npm run lint
 npm run build
+# Aggregation checks (Node.js 22.18+ or 24+)
+node --test tests/monthlyInsights.test.mjs
 ```
 
 ## Project context for coding assistants

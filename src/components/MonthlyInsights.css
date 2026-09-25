@@ -1,0 +1,27 @@
+.monthly-panel { margin: 0 2rem 2rem; padding: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; }
+.monthly-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.monthly-panel h2 { font-size: 1.5rem; font-weight: 600; }
+.monthly-panel h3 { margin: 1.25rem 0 .75rem; font-weight: 600; }
+.monthly-heading .eyebrow { color: #5f7b6e; margin-bottom: .5rem; }
+.monthly-panel label { display: grid; gap: .4rem; font-size: .9rem; }
+.monthly-panel input, .monthly-panel select { padding: .6rem; border: 1px solid #cbd3cb; border-radius: 6px; min-width: 0; background: #fffefa; color: #1b302a; }
+.monthly-switch { display: flex; gap: 1.5rem; margin: 1.5rem 0; }
+.monthly-switch [aria-pressed="true"] { text-decoration-thickness: 3px; }
+.monthly-switch [aria-pressed="false"] { color: #63736b; text-decoration: none; }
+.monthly-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.monthly-totals > div { display: grid; gap: .4rem; padding: 1rem; background: #f7f5ef; border-radius: 8px; overflow-wrap: anywhere; }
+.monthly-totals span, .monthly-note { color: #63736b; font-size: .85rem; }
+.monthly-totals strong { font-size: 1.2rem; }
+.monthly-note { margin: 1rem 0; }
+.monthly-charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.monthly-charts > div { min-width: 0; }
+.monthly-chart { width: 100%; height: 300px; }
+.monthly-table { overflow-x: auto; }
+.monthly-table table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.monthly-table th, .monthly-table td { padding: .8rem .5rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+.monthly-table .budget-alert { color: #a6382f; font-weight: 600; }
+.budget-form fieldset { border: 0; padding: 0; margin: 1rem 0; display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; }
+.budget-form .primary-button { margin: 0; padding: .65rem 1rem; }
+.monthly-panel summary { cursor: pointer; margin: 1rem 0; }
+@media (max-width: 900px) { .monthly-charts { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .monthly-panel { margin: 0 0 1.5rem; padding: 1rem; } .monthly-totals { grid-template-columns: 1fr; } .budget-form fieldset, .budget-form label { width: 100%; } }
