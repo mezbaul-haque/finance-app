@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# Finance App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A personal finance tracker designed to turn income, spending, and purchase intentions into clearer decisions.
 
-Currently, two official plugins are available:
+## Current foundation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The first Supabase migration creates the data model for profiles, accounts, categories, transactions, monthly budgets, and purchase decisions. Every table is protected by row-level security and is scoped to the signed-in user.
 
-## React Compiler
+Purchase decisions are retained separately from transactions so the app can later explain recommendations using actual spending patterns and the eventual outcome.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the Oxlint configuration
+1. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+2. In the Supabase dashboard, open the SQL Editor and run [the foundation migration](supabase/migrations/20260910000000_finance_foundation.sql).
+3. Install dependencies and start the app:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Development checks
+
+```bash
+npm run lint
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Project context for coding assistants
+
+Start with [AGENTS.md](AGENTS.md), [the product brief](docs/product.md), and [the current-state record](docs/current-state.md). They capture the durable context needed to continue work in a fresh chat.
